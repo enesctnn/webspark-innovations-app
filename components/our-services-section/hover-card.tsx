@@ -1,26 +1,32 @@
 'use client';
 
 import { SERVICES } from '@/config/our-services';
-import React, { useState } from 'react';
-import { ExpandingImage } from './extending-image';
+import { useState } from 'react';
+import { ExpandingImages } from './expanding-images';
+import { HoverCardContent } from './hover-card-content';
+
+const layoutArray: string[] = new Array(SERVICES.length).fill('1fr');
+const DEFAULT = `${layoutArray.join(' ')}`;
 
 export function HoverCard() {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [layout, setLayout] = useState<string>(DEFAULT);
 
   return (
-    <div className="flex h-[500px] flex-wrap overflow-hidden transition-all duration-500">
-      {SERVICES.map(({ description, src, title }, index) => (
-        <ExpandingImage
-          key={title}
-          description={description}
-          src={src}
-          title={title}
-          index={index + 1}
-          expandedIndex={expandedIndex}
-          setExpandedIndex={setExpandedIndex}
-          seperator={index < SERVICES.length - 1}
-        />
-      ))}
+    <div
+      className="relative h-[400px] w-screen overflow-hidden"
+      onMouseLeave={() => setLayout(DEFAULT)}
+    >
+      <ExpandingImages
+        layout={layout}
+        images={[...SERVICES.map(({ src }) => ({ src }))]}
+      />
+      <HoverCardContent
+        layout={DEFAULT}
+        setLayout={setLayout}
+        content={[
+          ...SERVICES.map(({ title, description }) => ({ title, description })),
+        ]}
+      />
     </div>
   );
 }

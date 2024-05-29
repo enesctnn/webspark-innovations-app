@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { LogoScrollOpacityWrapper } from './logo-scroll-opacity-wrapper';
 
 export const Logo = () => (
-  <Link href="/" className="relative h-16 w-28" title="WebSpark Home Page">
+  <Link href="/" className="relative h-20 w-36" title="WebSpark Home Page">
     <LogoScrollOpacityWrapper>
       <Image
         src="/logo/logo_rgb.png"
