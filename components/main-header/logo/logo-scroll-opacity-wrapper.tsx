@@ -17,7 +17,7 @@ export function LogoScrollOpacityWrapper({
       style={{
         opacity: increasing_on_scroll ? increasingOpacity : decreasingOpacity,
       }}
-      className="absolute h-full w-full"
+      className="absolute h-full w-full overflow-visible"
     >
       {children}
     </motion.div>

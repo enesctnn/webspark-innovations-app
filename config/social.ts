@@ -8,12 +8,12 @@ export const SOCIALS = [
   },
   {
     icon: FaLinkedin,
-    href: 'https://www.linkedin.com/feed/',
+    href: 'https://www.linkedin.com/company/webspark-innovations/',
     title: 'LinkedIn',
   },
   {
     icon: FaInstagram,
-    href: 'https://www.instagram.com/',
+    href: 'https://www.instagram.com/websparkinnovations/',
     title: 'Instagram',
   },
 ];

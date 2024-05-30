@@ -110,7 +110,7 @@ const config = {
           to: { height: '0' },
         },
         'infinite-scroll': {
-          from: { transform: 'translateX(100%)' },
+          from: { transform: 'translateX(100%) ' },
           to: { transform: 'translateX(-100%)' },
         },
         'reverse-infinite-scroll': {
