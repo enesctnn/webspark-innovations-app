@@ -117,8 +117,16 @@ const config = {
           from: { transform: 'translateX(-100%)' },
           to: { transform: 'translateX(100%)' },
         },
+        bump: {
+          '0%': { transform: 'scale(1)' },
+          '10%': { transform: 'scale(0.6)' },
+          '30%': { transform: 'scale(1.4)' },
+          '50%': { transform: 'scale(1.6)' },
+          '100%': { transform: 'scale(1)' },
+        },
       },
       animation: {
+        bump: 'bump 0.5s',
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'infinite-scroll': 'infinite-scroll 25s linear infinite',

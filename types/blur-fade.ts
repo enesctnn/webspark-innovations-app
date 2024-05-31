@@ -1,1 +1,5 @@
-export type BlurFadeT = { className?: string };
+export type BlurFadeT = {
+  className?: string;
+  fadeIn?: boolean;
+  fadeOut?: boolean;
+};

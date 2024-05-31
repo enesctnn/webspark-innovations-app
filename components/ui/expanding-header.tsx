@@ -10,6 +10,8 @@ export const ExpandingHeader = ({
   children,
   size,
   animateOnce = false,
+  fadeIn = true,
+  fadeOut = true,
   className,
 }: ExpandingHeaderT) => (
   <motion.header
@@ -17,20 +19,20 @@ export const ExpandingHeader = ({
     whileInView={{ height: size }}
     transition={{ duration: 0.5, type: 'spring' }}
     viewport={{ once: animateOnce, margin: '-30px' }}
-    className="relative w-full overflow-hidden bg-ellipse from-[#111] from-40% to-black to-80% text-center"
+    className={cn(
+      'relative w-full overflow-hidden bg-ellipse from-regalblue-700 from-40% to-black to-80% text-center px-20',
+      className
+    )}
   >
     <motion.div
       initial={{ translateY: '100%' }}
       whileInView={{ translateY: '28%' }}
       transition={{ duration: 0.8, type: 'spring' }}
-      className={cn(
-        'mx-auto h-full w-full space-y-[1.5px] px-4 sm:px-10',
-        className
-      )}
+      className="mx-auto h-full w-full space-y-[1.5px] px-4 sm:px-10"
     >
       {children}
       <TextGradientLines />
     </motion.div>
-    <BlurFade />
+    {<BlurFade fadeIn={fadeIn} fadeOut={fadeOut} />}
   </motion.header>
 );

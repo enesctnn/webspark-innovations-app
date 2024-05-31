@@ -6,12 +6,13 @@ export const ExpandingImages = ({ images, layout }: ExpandingImagesT) => (
     style={{ gridTemplateColumns: layout }}
     role="grid"
   >
-    {images.map(image => (
+    {images.map((image, index) => (
       <li
         key={image.src}
         className="relative z-40 h-full w-full bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${image.src})` }}
-        role="gridcell"
+        role="row"
+        aria-rowindex={index + 1}
       >
         <div
           className="absolute inset-0 -z-10 bg-black/50 transition-all duration-500"

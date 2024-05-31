@@ -7,7 +7,6 @@ export const InfiniteScrollImages = ({ images }: InfiniteScrollImagesT) => (
       {images.map(item => (
         <Image
           key={item.alt}
-          title={item.alt}
           src={item.src}
           alt={item.alt}
           width={80}
@@ -21,7 +20,6 @@ export const InfiniteScrollImages = ({ images }: InfiniteScrollImagesT) => (
       {images.map(item => (
         <Image
           key={item.alt}
-          title={item.alt}
           src={item.src}
           alt={item.alt}
           width={40}

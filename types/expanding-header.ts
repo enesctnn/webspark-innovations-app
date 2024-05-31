@@ -3,4 +3,6 @@ export type ExpandingHeaderT = {
   children: React.ReactNode;
   className?: string;
   animateOnce?: boolean;
+  fadeIn?: boolean;
+  fadeOut?: boolean;
 };

@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export const OrderedSlidingItems = ({ items }: OrderedSlidingItemsT) => (
   <div className="relative flex max-w-screen-2xl flex-col gap-52">
-    <div className="absolute left-1/2 hidden h-[88%] w-[6px] -translate-x-1/2 translate-y-40 transform bg-zinc-700 lg:block" />
+    <div className="absolute left-1/2 hidden h-[90%] w-[6px] -translate-x-1/2 translate-y-40 transform bg-zinc-600 lg:block" />
     {items.map(({ description, img, title }, index) => (
       <motion.div
         key={title}
@@ -19,7 +19,7 @@ export const OrderedSlidingItems = ({ items }: OrderedSlidingItemsT) => (
         viewport={{ once: true, margin: '-28%' }}
         transition={{ duration: 0.5 }}
       >
-        <div className="absolute left-1/2 hidden h-16 w-16 -translate-x-1/2 transform items-center justify-center rounded-full bg-zinc-600 text-xl font-bold lg:flex">
+        <div className="absolute left-1/2 hidden h-16 w-16 -translate-x-1/2 transform items-center justify-center rounded-full bg-zinc-700 text-xl font-bold lg:flex">
           {index + 1}
         </div>
         <Image
@@ -29,13 +29,11 @@ export const OrderedSlidingItems = ({ items }: OrderedSlidingItemsT) => (
           height={450}
           className="z-10"
         />
-        <section
-          className={`w-2/3 lg:w-1/3 ${(index + 1) % 2 === 1 ? 'lg:text-right' : 'lg:text-left'}`}
-        >
+        <section className="w-2/3 text-center lg:w-1/3">
           <h2 className="mb-4 text-4xl font-bold max-lg:text-center">
             {title}
           </h2>
-          <p className="md:text-xl">{description}</p>
+          <p className="text-pastelblue md:text-xl">{description}</p>
         </section>
       </motion.div>
     ))}

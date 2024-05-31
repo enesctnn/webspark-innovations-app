@@ -1,14 +1,22 @@
 import { BlurFadeT } from '@/types/blur-fade';
 
-export const BlurFade = ({ className }: BlurFadeT) => (
+export const BlurFade = ({
+  className,
+  fadeIn = true,
+  fadeOut = true,
+}: BlurFadeT) => (
   <>
-    <div
-      className={`!absolute !top-0 h-1 w-full bg-black blur-sm ${className}`}
-      aria-hidden
-    />
-    <div
-      className={`!absolute !bottom-0 h-1 w-full bg-black blur-sm ${className}`}
-      aria-hidden
-    />
+    {fadeIn && (
+      <div
+        className={`absolute inset-x-0 top-[-3px] h-2 bg-black blur-sm ${className}`}
+        aria-hidden
+      />
+    )}
+    {fadeOut && (
+      <div
+        className={`absolute inset-x-0 bottom-[-3px] h-2 bg-black blur-sm ${className}`}
+        aria-hidden
+      />
+    )}
   </>
 );
