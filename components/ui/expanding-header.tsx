@@ -20,7 +20,7 @@ export const ExpandingHeader = ({
     transition={{ duration: 0.5, type: 'spring' }}
     viewport={{ once: animateOnce, margin: '-30px' }}
     className={cn(
-      'relative w-full overflow-hidden bg-ellipse from-regalblue-700 from-40% to-black to-80% text-center px-20',
+      'relative w-full overflow-hidden bg-ellipse from-regalblue-700 from-40% to-black to-80% px-20 text-center',
       className
     )}
   >
@@ -33,6 +33,6 @@ export const ExpandingHeader = ({
       {children}
       <TextGradientLines />
     </motion.div>
-    {<BlurFade fadeIn={fadeIn} fadeOut={fadeOut} />}
+    <BlurFade fadeIn={fadeIn} fadeOut={fadeOut} />
   </motion.header>
 );

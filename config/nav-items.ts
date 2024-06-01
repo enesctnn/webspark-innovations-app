@@ -18,8 +18,8 @@ export const NAVITEMS = [
 ];
 
 export enum NavItemsGroup {
-  'HOME' = '/',
-  'ABOUT' = '/about',
-  'WHAT_WE_OFFER' = '/what-we-offer',
-  'CONTACT_US' = '/contact-us',
+  HOME = '/',
+  ABOUT = '/about',
+  WHAT_WE_OFFER = '/what-we-offer',
+  CONTACT_US = '/contact-us',
 }

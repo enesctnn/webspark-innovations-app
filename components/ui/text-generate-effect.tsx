@@ -20,7 +20,7 @@ export const TextGenerateEffect = ({
             key={word + idx}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: idx * 0.1, duration: 0.8 }}
+            transition={{ delay: idx * 0.07, duration: 0.8 }}
             className={cn(
               'text-xs !leading-[2.5] tracking-wide text-inherit text-pastelblue opacity-0 md:text-2xl',
               className

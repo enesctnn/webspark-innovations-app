@@ -1,7 +1,7 @@
-import bird from '@/assets/images/bird.png';
-import hawk from '@/assets/images/hawk.png';
-import bear from '@/assets/images/bear.png';
-import plane from '@/assets/images/plane.png';
+import bird from '@/assets/figures/bird.png';
+import hawk from '@/assets/figures/hawk.png';
+import bear from '@/assets/figures/bear.png';
+import plane from '@/assets/figures/plane.png';
 
 export const ITEMS = [
   {

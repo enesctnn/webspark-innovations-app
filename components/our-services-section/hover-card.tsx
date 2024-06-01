@@ -13,7 +13,7 @@ export function HoverCard() {
 
   return (
     <div
-      className="relative h-[400px] w-screen overflow-hidden"
+      className="relative h-[550px] w-full overflow-hidden"
       onMouseLeave={() => setLayout(DEFAULT)}
     >
       <ExpandingImages
@@ -24,7 +24,11 @@ export function HoverCard() {
         layout={DEFAULT}
         setLayout={setLayout}
         content={[
-          ...SERVICES.map(({ title, description }) => ({ title, description })),
+          ...SERVICES.map(({ title, description, href }) => ({
+            title,
+            description,
+            href,
+          })),
         ]}
       />
     </div>

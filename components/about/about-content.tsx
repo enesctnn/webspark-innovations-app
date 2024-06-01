@@ -3,7 +3,7 @@ import { AboutWelcome } from './about-welcome';
 
 export function AboutContent() {
   return (
-    <MaxWidthWrapper className="relative z-30 flex max-w-screen-2xl flex-col items-center justify-center overflow-hidden py-20">
+    <MaxWidthWrapper className="relative z-30 flex max-w-screen-2xl flex-col items-center justify-center overflow-hidden pb-40 pt-14">
       <AboutWelcome />
     </MaxWidthWrapper>
   );

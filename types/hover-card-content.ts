@@ -1,8 +1,11 @@
-import { SERVICES } from '@/config/our-services';
 import { SetStateAction } from 'react';
 
 export type HoverCardContentT = {
-  content: Omit<(typeof SERVICES)[number], 'src'>[];
+  content: {
+    title: string;
+    description: string;
+    href: string;
+  }[];
   layout: string;
   setLayout: React.Dispatch<SetStateAction<string>>;
 };

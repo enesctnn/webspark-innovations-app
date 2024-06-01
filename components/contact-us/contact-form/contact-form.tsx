@@ -19,8 +19,10 @@ import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
 import { FormError } from './form-error';
 import { FormSuccess } from './form-success';
+import { cn } from '@/lib/utils';
+import { ContactFormT } from '@/types/contact-form';
 
-export function ContactForm() {
+export function ContactForm({ className }: ContactFormT) {
   const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
   const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
   const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
@@ -72,8 +74,14 @@ export function ContactForm() {
       <form
         ref={formRef}
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col gap-10 rounded-md bg-[#111] px-8 py-5 font-bold"
+        className={cn(
+          'flex flex-col gap-10 rounded-md bg-[#111] px-8 py-8 font-bold',
+          className
+        )}
       >
+        <h1 className="text-center text-4xl uppercase lg:text-5xl">
+          Contact Us
+        </h1>
         <FormField
           control={form.control}
           name="user_name"

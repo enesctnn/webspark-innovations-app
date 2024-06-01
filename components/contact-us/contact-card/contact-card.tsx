@@ -1,5 +1,7 @@
+import { BlurFade } from '@/components/ui/blur-fade';
+
 export const ContactCard = () => (
-  <div className="flex flex-col items-center justify-evenly rounded-md bg-whitelilac px-10 text-black">
+  <div className="relative flex flex-col items-center justify-evenly overflow-hidden rounded-md bg-ellipse from-[#111] from-25% to-transparent to-50% px-10">
     <div className="space-y-4 text-center">
       <h1 className="text-5xl !font-extrabold">
         Contact Us For a Free Quote and Consultation.
@@ -19,5 +21,6 @@ export const ContactCard = () => (
         websparkinnovations@gmail.com
       </a>
     </div>
+    <BlurFade fadeOut={false} />
   </div>
 );

@@ -1,6 +1,6 @@
 export const TextGradientLines = () => (
   <div
-    className="relative mx-auto h-40 w-full max-w-[40rem] overflow-hidden"
+    className="relative mx-auto h-10 w-full max-w-[40rem] overflow-hidden"
     aria-hidden
   >
     <div
