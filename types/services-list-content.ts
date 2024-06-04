@@ -1,9 +1,8 @@
+import { ServicesItemT } from '@/types/services-item';
 import { StaticImageData } from 'next/image';
 
 export type ServicesListContentT = {
-  items: {
-    src: StaticImageData;
-    title: string;
-    description: string;
-  }[];
+  services: ServicesItemT;
+  banner: StaticImageData;
+  title: string;
 };

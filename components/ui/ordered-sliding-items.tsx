@@ -9,7 +9,7 @@ export const OrderedSlidingItems = ({ items }: OrderedSlidingItemsT) => (
     <div className="absolute left-1/2 hidden h-[90%] w-[6px] -translate-x-1/2 translate-y-40 transform bg-zinc-600 lg:block" />
     {items.map(({ description, img, title }, index) => (
       <motion.div
-        key={title}
+        key={title + index}
         className={`relative flex flex-col ${(index + 1) % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center justify-evenly gap-x-36 gap-y-10`}
         initial={{
           opacity: 0,

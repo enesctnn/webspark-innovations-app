@@ -1,1 +1,1 @@
-export type ContactFormT = { className?: string };
+export type ContactFormT = { className?: string; title?: string };

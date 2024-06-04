@@ -22,7 +22,7 @@ import { FormSuccess } from './form-success';
 import { cn } from '@/lib/utils';
 import { ContactFormT } from '@/types/contact-form';
 
-export function ContactForm({ className }: ContactFormT) {
+export function ContactForm({ className, title = 'Contact Us' }: ContactFormT) {
   const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
   const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
   const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
@@ -42,11 +42,13 @@ export function ContactForm({ className }: ContactFormT) {
     },
   });
 
-  const onSubmit: SubmitHandler<ContactFormSchemaT> = async () => {
+  const onSubmit: SubmitHandler<ContactFormSchemaT> = async data => {
     setError(undefined);
     setSuccess(undefined);
+    const validateFields = ContactFormSchema.safeParse(data);
     if (
       formRef.current &&
+      validateFields &&
       EMAILJS_SERVICE_ID &&
       EMAILJS_TEMPLATE_ID &&
       EMAILJS_PUBLIC_KEY
@@ -75,13 +77,11 @@ export function ContactForm({ className }: ContactFormT) {
         ref={formRef}
         onSubmit={form.handleSubmit(onSubmit)}
         className={cn(
-          'flex flex-col gap-10 rounded-md bg-[#111] px-8 py-8 font-bold',
+          'flex flex-col gap-10 rounded-md border border-[#13244a] bg-transparent px-8 py-8 font-bold',
           className
         )}
       >
-        <h1 className="text-center text-4xl uppercase lg:text-5xl">
-          Contact Us
-        </h1>
+        <h1 className="text-center text-4xl uppercase lg:text-5xl">{title}</h1>
         <FormField
           control={form.control}
           name="user_name"

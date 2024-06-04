@@ -10,7 +10,6 @@ export const ExpandingImages = ({ images, layout }: ExpandingImagesT) => (
         key={image.src}
         className="relative z-40 h-full w-full bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${image.src})` }}
-        role="img"
       >
         <div
           className="absolute inset-0 -z-10 bg-black/50 transition-all duration-500"

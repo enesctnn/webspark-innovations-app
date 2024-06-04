@@ -13,7 +13,7 @@ export function NavLink({ children, href, className }: NavLinkT) {
       href={href}
       className={buttonVariants({
         variant: 'link',
-        className: `!p-0 !text-lg font-bold text-muted text-whitelilac decoration-2 underline-offset-[20px] ${path === href ? 'underline ' : ''} ${className}`,
+        className: `!p-0 !m-0 !text-lg font-bold text-muted text-whitelilac decoration-2 underline-offset-[10px] ${path === href ? 'underline ' : ''} ${className}`,
       })}
     >
       {children}

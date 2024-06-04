@@ -16,7 +16,7 @@ export const AboutWelcome = () => (
     animate={{
       opacity: 1,
       translateY: 0,
-      scale: [1, 0.9, 0.85, 0.8, 0.8],
+      scale: [1, 0.9, 0.85, 0.8, 0.75],
       transitionEnd: { rotateX: 0, scale: 1 },
     }}
     transition={{ duration: 8 }}

@@ -1,33 +1,41 @@
 import { ServicesListContentT } from '@/types/services-list-content';
-import Image from 'next/image';
-import { BlurFade } from '../ui/blur-fade';
-import { MaxWidthWrapper } from '../ui/max-width-wrapper';
 import { ContactForm } from '../contact-us/contact-form/contact-form';
+import { ImageBanner } from '../image-banner/image-banner';
+import { ServicesListArticle } from './services-list-article';
+import { MaxWidthWrapper } from '../ui/max-width-wrapper';
 
-export const ServicesListContent = ({ items }: ServicesListContentT) => (
-  <div className="relative min-h-screen overflow-hidden bg-ellipse from-regalblue-700 from-40% to-regalblue-900 to-60% py-40">
-    <MaxWidthWrapper className="flex flex-col items-center justify-center gap-40">
-      {items.map(({ description, src, title }, index) => (
-        <article
-          key={title}
-          className={`flex flex-col items-center justify-center gap-10 ${(index + 1) % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
-        >
-          <section className="flex flex-1 flex-col gap-10 text-center">
-            <h2 className="text-4xl font-extrabold lg:text-5xl">{title}</h2>
-            <p className="text-lg lg:text-2xl">{description}</p>
-          </section>
-          <div className="relative min-h-96 w-full flex-1">
-            <Image
-              src={src}
-              alt={title}
-              className="object-contain object-center"
-              fill
-            />
-          </div>
-        </article>
-      ))}
-      <ContactForm className="w-full lg:w-2/3" />
-    </MaxWidthWrapper>
-    <BlurFade fadeOut={false} />
-  </div>
+export const ServicesListContent = ({
+  services: {
+    services,
+    main_header: { text, header },
+  },
+  banner,
+  title,
+}: ServicesListContentT) => (
+  <>
+    <ImageBanner banner={banner} title={title} />
+    <header className="w-full bg-regalblue-300 py-14 text-center">
+      <MaxWidthWrapper className="flex flex-col gap-8">
+        <h2 className="flex items-center justify-center gap-4 text-lg italic text-sky-400">
+          <div className="h-px w-8 bg-sky-400" />
+          About This Service
+        </h2>
+        <h1 className="text-5xl font-bold text-sky-400">{header}</h1>
+        <p>{text}</p>
+      </MaxWidthWrapper>
+    </header>
+    <div className="flex flex-col items-stretch justify-center">
+      <ul className="flex flex-col">
+        {services.map((item, index) => (
+          <li key={item.title}>
+            <ServicesListArticle service={item} index={index} />
+          </li>
+        ))}
+      </ul>
+      <ContactForm
+        className={`mx-auto w-full rounded-none border-none text-regalblue-700 ${services.length % 2 === 0 ? 'bg-white' : 'bg-pastelblue-100'}`}
+        title="Get In Touch"
+      />
+    </div>
+  </>
 );

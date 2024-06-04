@@ -13,6 +13,7 @@ export const ExpandingHeader = ({
   fadeIn = true,
   fadeOut = true,
   className,
+  id,
 }: ExpandingHeaderT) => (
   <motion.header
     initial={{ height: 0 }}
@@ -23,6 +24,7 @@ export const ExpandingHeader = ({
       'relative w-full overflow-hidden bg-ellipse from-regalblue-700 from-40% to-black to-80% px-20 text-center',
       className
     )}
+    id={id}
   >
     <motion.div
       initial={{ translateY: '100%' }}

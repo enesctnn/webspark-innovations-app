@@ -8,12 +8,13 @@ import {
 } from '@/components/ui/sheet';
 import { IoMenuOutline } from 'react-icons/io5';
 import { MobileNavItems } from './mobile-nav-items';
+import { Social } from '../social/social';
 
 export const MobileNavBar = () => (
   <Sheet>
     <SheetTrigger asChild>
       <IoMenuOutline
-        className="drop-shadow-border ml-auto block cursor-pointer text-whitelilac transition-transform hover:scale-105 sm:hidden"
+        className="drop-shadow-border ml-auto block cursor-pointer text-whitelilac transition-transform hover:scale-105 lg:hidden"
         size={45}
       />
     </SheetTrigger>
@@ -31,6 +32,7 @@ export const MobileNavBar = () => (
       </SheetHeader>
       <hr className="mt-6 w-full" />
       <MobileNavItems />
+      <Social iconSize={30} />
     </SheetContent>
   </Sheet>
 );

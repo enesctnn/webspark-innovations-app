@@ -5,4 +5,5 @@ export type ExpandingHeaderT = {
   animateOnce?: boolean;
   fadeIn?: boolean;
   fadeOut?: boolean;
+  id?: string;
 };

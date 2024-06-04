@@ -4,7 +4,7 @@ export const SERVICES = [
     description:
       'We craft responsive, user-friendly websites that look great on any device. Our development team ensures your site is not only visually appealing but also optimized for performance and scalability.',
     src: '/images/workspace1.png',
-    href: '/services/web-design-developement',
+    href: '/services/web-design-development',
   },
   {
     title: 'Social Media Marketing',
@@ -30,7 +30,7 @@ export const SERVICES = [
 ];
 
 export enum ServicesNavGroup {
-  WEB_DESIGN_DEVELOPEMENT = '/services/web-design-developement',
+  WEB_DESIGN_DEVELOPMENT = '/services/web-design-development',
   SOCIAL_MEDIA_MARKETING = '/services/social-media-marketing',
   WHAT_WE_OFFER = '/services/search-engine-optimization',
   CONTACT_US = '/services/custom-logo-creation',
