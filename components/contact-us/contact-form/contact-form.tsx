@@ -14,13 +14,14 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { MaxWidthWrapper } from '@/components/ui/max-width-wrapper';
 import { Textarea } from '@/components/ui/textarea';
+import { cn } from '@/lib/utils';
+import { ContactFormT } from '@/types/contact-form';
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
 import { FormError } from './form-error';
 import { FormSuccess } from './form-success';
-import { cn } from '@/lib/utils';
-import { ContactFormT } from '@/types/contact-form';
 
 export function ContactForm({ className, title = 'Contact Us' }: ContactFormT) {
   const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -77,43 +78,26 @@ export function ContactForm({ className, title = 'Contact Us' }: ContactFormT) {
         ref={formRef}
         onSubmit={form.handleSubmit(onSubmit)}
         className={cn(
-          'flex flex-col gap-10 rounded-md border border-[#13244a] bg-transparent px-8 py-8 font-bold',
+          'rounded-md border border-[#13244a] bg-transparent px-8 py-8',
           className
         )}
       >
-        <h1 className="text-center text-4xl uppercase lg:text-5xl">{title}</h1>
-        <FormField
-          control={form.control}
-          name="user_name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel htmlFor="user_name">Name</FormLabel>
-              <FormControl>
-                <Input
-                  id="user_name"
-                  disabled={isPending}
-                  type="text"
-                  placeholder="Full Name"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <div className="grid grid-cols-2 gap-4">
+        <MaxWidthWrapper className="flex max-w-screen-lg flex-col gap-10 !p-0 font-bold">
+          <h1 className="text-center text-4xl uppercase lg:text-5xl">
+            {title}
+          </h1>
           <FormField
             control={form.control}
-            name="user_email"
+            name="user_name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="user_email">Email</FormLabel>
+                <FormLabel htmlFor="user_name">Name</FormLabel>
                 <FormControl>
                   <Input
-                    id="user_email"
+                    id="user_name"
                     disabled={isPending}
-                    type="email"
-                    placeholder="example@mail.com"
+                    type="text"
+                    placeholder="Full Name"
                     {...field}
                   />
                 </FormControl>
@@ -121,18 +105,58 @@ export function ContactForm({ className, title = 'Contact Us' }: ContactFormT) {
               </FormItem>
             )}
           />
+          <div className="grid grid-cols-2 gap-4">
+            <FormField
+              control={form.control}
+              name="user_email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="user_email">Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      id="user_email"
+                      disabled={isPending}
+                      type="email"
+                      placeholder="example@mail.com"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="user_phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel htmlFor="user_phone">Phone</FormLabel>
+                  <FormControl>
+                    <Input
+                      id="user_phone"
+                      disabled={isPending}
+                      type="string"
+                      placeholder="(267) 890-7561"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
           <FormField
             control={form.control}
-            name="user_phone"
+            name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel htmlFor="user_phone">Phone</FormLabel>
+                <FormLabel htmlFor="message">Message</FormLabel>
                 <FormControl>
-                  <Input
-                    id="user_phone"
+                  <Textarea
+                    id="message"
                     disabled={isPending}
-                    type="string"
-                    placeholder="(267) 890-7561"
+                    placeholder="Your Message"
+                    className="max-h-96"
                     {...field}
                   />
                 </FormControl>
@@ -140,36 +164,17 @@ export function ContactForm({ className, title = 'Contact Us' }: ContactFormT) {
               </FormItem>
             )}
           />
-        </div>
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel htmlFor="message">Message</FormLabel>
-              <FormControl>
-                <Textarea
-                  id="message"
-                  disabled={isPending}
-                  placeholder="Your Message"
-                  className="max-h-96"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        {success && <FormSuccess message={success} />}
-        {error && <FormError message={error} />}
-        <Button
-          disabled={isPending}
-          type="submit"
-          className="mx-auto font-bold"
-          variant="secondary"
-        >
-          {isPending ? 'Sending...' : 'GET A CALL'}
-        </Button>
+          {success && <FormSuccess message={success} />}
+          {error && <FormError message={error} />}
+          <Button
+            disabled={isPending}
+            type="submit"
+            className="mx-auto font-bold"
+            variant="secondary"
+          >
+            {isPending ? 'Sending...' : 'GET A CALL'}
+          </Button>
+        </MaxWidthWrapper>
       </form>
     </Form>
   );

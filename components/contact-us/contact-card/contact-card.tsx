@@ -9,7 +9,7 @@ export const ContactCard = () => (
         complimentary discovery session with our team.
       </p>
     </div>
-    <div className="flex divide-regalblue whitespace-nowrap text-lg font-bold text-white max-lg:flex-col max-lg:divide-y max-lg:text-center lg:divide-x-2">
+    <div className="flex divide-regalblue whitespace-nowrap text-lg font-bold text-white drop-shadow-[0_0_3px_rgba(0,0,0,0.25)] max-lg:flex-col max-lg:divide-y max-lg:text-center lg:divide-x-2">
       <p className="px-2">(267) 890-7561</p>
       <a
         className="px-2 hover:underline"

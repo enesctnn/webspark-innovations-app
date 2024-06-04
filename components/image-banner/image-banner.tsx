@@ -6,7 +6,7 @@ export function ImageBanner({ banner, title }: ImageBannerT) {
 
   return (
     <>
-      <div className="fixed -top-10 left-0 -z-40 h-[800px] w-full overflow-hidden">
+      <div className="fixed left-0 top-0 -z-40 h-[800px] w-full overflow-hidden">
         <Image
           src={banner}
           alt="a computer screent website design image"

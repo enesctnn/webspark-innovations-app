@@ -10,6 +10,7 @@ export function ScrollIntoViewLink({
   href,
   title,
   className,
+  setIsModalOpen,
 }: ScrollIntoViewLinkT) {
   useEffect(() => {
     const hash = window.location.hash.split('#');
@@ -25,6 +26,7 @@ export function ScrollIntoViewLink({
     <Link
       href={href}
       onClick={e => {
+        if (setIsModalOpen) setIsModalOpen(false);
         e.preventDefault();
         if (path !== href) router.push(`${href}#${elementId}`);
         document

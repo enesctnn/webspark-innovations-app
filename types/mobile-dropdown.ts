@@ -1,3 +1,5 @@
+import { SetStateAction } from 'react';
+
 export type MobileDropdownT = {
   title: string;
   href: string;
@@ -6,4 +8,5 @@ export type MobileDropdownT = {
     title: string;
     href: string;
   }[];
+  setIsModalOpen: React.Dispatch<SetStateAction<boolean>>;
 };

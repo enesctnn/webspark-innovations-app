@@ -18,7 +18,7 @@ export const ServicesListArticle = ({
         />
       </div>
     )}
-    <section className="flex flex-1 flex-col gap-4 text-left">
+    <section className="flex w-full flex-1 flex-col gap-4 whitespace-pre-line py-1 text-left">
       <h2 className="text-3xl font-extrabold">{title}</h2>
       <div className="flex flex-col gap-2">
         <div className="h-0.5 w-10 bg-regalblue-50" />
@@ -30,7 +30,7 @@ export const ServicesListArticle = ({
             <div className="h-0.5 w-14 bg-regalblue-50" />
             We Provide
           </h3>
-          <ul className="w-max rounded-md p-8 shadow-md shadow-zinc-700/60">
+          <ul className="w-max max-w-full whitespace-pre-line rounded-md p-8 shadow-md shadow-zinc-700/60">
             {we_provide.map(item => (
               <li key={item} className="flex items-center gap-1">
                 <GoDotFill size={14} />

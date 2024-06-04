@@ -18,7 +18,6 @@ export const WEB_DESIGN_DEVELOPMENT_SERVICE: ServicesItemT = {
         'Sitemap & Wireframe Strategy',
         'Content Development & Copywriting',
         'SEO Audit & Implementation',
-        'Content Development & Copywriting',
         'Photography & Video Services',
       ],
     },
