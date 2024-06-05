@@ -1,5 +1,3 @@
-'use client';
-
 import { ExpandingHeader } from '../ui/expanding-header';
 
 export const OurServicesHeader = () => (

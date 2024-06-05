@@ -15,7 +15,6 @@ const AboutPage = () => (
       className="absolute inset-x-0 bottom-0 top-60 z-10"
       background="transparent"
     />
-    <AboutHeader />
     <AboutContent />
   </>
 );

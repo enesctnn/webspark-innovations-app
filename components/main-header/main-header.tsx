@@ -7,7 +7,7 @@ import { Social } from './social/social';
 
 export const MainHeader = ({ solid }: MainHeaderT) => (
   <header
-    className={`relative z-50 flex h-24 w-full items-center justify-between px-20 ${!!solid ? ' inset-x-0 bg-regalblue' : 'top-0 mt-8 md:sticky'}`}
+    className={`relative z-50 flex h-24 w-full items-center justify-between px-20 ${!!solid ? ' inset-x-0 bg-regalblue' : 'top-0 mt-8 lg:sticky'}`}
   >
     <Logo solid={!!solid} />
     <Navbar />
