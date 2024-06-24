@@ -4,7 +4,7 @@ import { Button } from '../ui/button';
 import { FlipWords } from '../ui/flip-words';
 import { MaxWidthWrapper } from '../ui/max-width-wrapper';
 
-const words = ['Spark', 'Boost', 'Momentum', 'Inspiration'];
+const words = ['Spark', 'Motivation', 'Boost', 'Momentum', 'Inspiration'];
 const className =
   'bg-gradient-to-b from-whitelilac to-regalblue-50 bg-clip-text';
 
